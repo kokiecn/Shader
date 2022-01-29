@@ -1,2 +1,2 @@
 # Shader
-practice for shader
+Shader practice
