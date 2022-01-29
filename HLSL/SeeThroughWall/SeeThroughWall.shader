@@ -3,16 +3,17 @@
     Properties
     {
         _MainTex("Texture", 2D) = "white" {}
-        _Color("Color", Color) = (0,0,0,0)
+        _Color("Color", Color) = (0,0,0,0.5)
     }
         SubShader
         {
+            Blend SrcAlpha OneMinusSrcAlpha
             Tags { "Queue" = "Transparent" }
             LOD 100
 
             Pass
             {
-                Cull Back
+                Cull Off
                 ZWrite Off
                 ZTest Always
 
@@ -43,6 +44,7 @@
 
                 fixed4 frag(v2f i) : SV_Target
                 {
+                    
                     return _Color;
                 }
 
